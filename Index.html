@@ -1,10 +1,35 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ASK S AI </title>
-<style>html,body{margin:0;height:100%}iframe{position:fixed;top:0;left:0;width:100%;height:calc(100% - 70px);border:0}#ad{position:fixed;bottom:0;left:0;width:100%;height:70px;background:#fff;display:flex;justify-content:center;align-items:center;box-shadow:0 -2px 10px #0003}#ad img{max-height:60px;max-width:95%}</style>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script></head><body>
-<iframe src="https://ask-sg-ai.lovable.app/"></iframe><div id="ad"><a id="l" target="_blank"><img id="i"></a></div>
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ASK S AI </title>
+<style>
+html,
+body{margin:0;height:100%}iframe{position:fixed;
+top:0;
+left:0;
+width:100%;
+height:calc(100% - 70px);border:0}#ad{position:fixed;
+bottom:0;left:0;
+width:100%;
+height:70px;
+background:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 -2px 10px #0003}#ad img{max-height:60px;max-width:95%}
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script></head>
+<body>
+
+<iframe src="https://ask-sg-ai.lovable.app/"></iframe><div id="ad"><a id="l" target="_blank"><img id="i"></a>
+</div>
+
 <script>
 firebase.initializeApp({apiKey:"YOUR_API_KEY",authDomain:"soninke-tv.firebaseapp.com",databaseURL:"https://soninke-tv-default-rtdb.europe-west1.firebasedatabase.app",projectId:"asksgai"});
 let ads=[],n=0;firebase.database().ref("ads").on("value",s=>{ads=Object.values(s.val()||{});show();});
 function show(){if(!ads.length)return;let a=ads[n];i.src=a.image;l.href=a.url;n=(n+1)%ads.length;}
 setInterval(show,5000);
-</script></body></html>
+</script>
+
+</body>
+</html>
